@@ -8,17 +8,6 @@
 TabContent
   } from "carbon-components-svelte";
 
-  const cleaner = async (data) => (await data).map(d => ({
-    _id:d._id,
-    winrate:+d.winrate,
-    games:+d.games,
-    wins:+d.wins,
-    Eliminations:+d.Eliminations,
-    'Players Saved':+d['Players Saved'],
-    'Time Played':+d['Time Played'],
-    games_total:+d.games_total
-  }))
-
   const match1 = [
     {
       "$match": {
@@ -111,7 +100,6 @@ TabContent
     const data = await datasets
     const results1 = data[0]
     const results2 = data[1]
-    console.log("RESULTS", results1, results2)
     const all_ids = [...results1.map(d => d._id), ...results2.map(d => d._id)]
     let results = {}
     for (let d of all_ids) {
@@ -169,7 +157,6 @@ TabContent
      console.log(all_heroes)
     for (let k of Object.keys(results)) {
       const d = results[k]
-      console.log(d.all_games)
       d.winrate = d.all_wins / d.all_games
       d.full_game_rate = d.full_games / (d.full_games + d.partial_games_total)
       d.partial_game_rate = d.partial_games_total? d.partial_games / d.partial_games_total : 0
@@ -185,7 +172,6 @@ TabContent
 
     delete results['All Heroes']
     const final_results = Object.values(results)
-    console.log(final_results)
 
     return final_results
   }
@@ -251,8 +237,8 @@ TabContent
 </style>
   
   <div>
-    <Filter pipeline={match1} let:data={p_results1} process={cleaner}>
-    <Filter pipeline={match2} let:data={p_results2} process={cleaner}>
+    <Filter pipeline={match1} let:data={p_results1} >
+    <Filter pipeline={match2} let:data={p_results2} >
       <Tabs bind:selected>
         <Tab label="Pick/Win" />
         <Tab label="Full games vs Partual Games" />
