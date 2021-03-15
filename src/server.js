@@ -9,7 +9,7 @@ import {ejsonBodyParser} from './_ejsonBodyParser.mjs'
 
 const { PORT, NODE_ENV } = process.env;
 
-polka()
+export default polka()
   .use(
     cors({}),    
     compression({ threshold: 0 }),
