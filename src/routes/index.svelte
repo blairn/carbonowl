@@ -1,8 +1,5 @@
 <script>
   import {
-    Content,
-    Breadcrumb,
-    BreadcrumbItem,
     Grid,
     Row,
     Column,
@@ -19,62 +16,18 @@
 </script>
 
 <Row>
-  
-</Row>
-
-<Row>
   <Column noGutter>
-    <Tabs aria-label="Tab navigation">
-      <Tab label="About" />
-      <Tab label="Design" />
-      <Tab label="Develop" />
-      <div slot="content" class="tabbed-content">
-        <Grid as fullWidth let:props>
-          <TabContent {...props}>
-            <Row>
-              <Column md="{4}" lg="{7}">
-                <Select
-                  labelText="Carbon theme"
-                  bind:selected="{$carbon_theme}"
-                  style="margin-bottom: 1rem"
-                >
-                  <SelectItem value="white" text="White" />
-                  <SelectItem value="g10" text="Gray 10" />
-                  <SelectItem value="g90" text="Gray 90" />
-                  <SelectItem value="g100" text="Gray 100" />
-                </Select>
-                <p>
-                  Carbon is IBM’s open-source design system for digital products
-                  and experiences. With the IBM Design Language as its
-                  foundation, the system consists of working code, design tools
-                  and resources, human interface guidelines, and a vibrant
-                  community of contributors.
-                </p>
-              </Column>
-            </Row>
-          </TabContent>
-          <TabContent {...props}>
-            <Row>
-              <Column md="{4}" lg="{7}">
-                <p>
-                  Rapidly build beautiful and accessible experiences. The Carbon
-                  kit contains all resources you need to get started.
-                </p>
-              </Column>
-            </Row>
-          </TabContent>
-          <TabContent {...props}>
-            <Row>
-              <Column md="{4}" lg="{7}">
-                <p>
-                  Carbon provides styles and components in Vanilla, React,
-                  Angular, Vue and Svelte for anyone building on the web.
-                </p>
-              </Column>
-            </Row>
-          </TabContent>
-        </Grid>
-      </div>
-    </Tabs>
+    Hey there, this is RobotWizards server comms test for OWLViewer. 
+    If you go to stats and it seems to work, then hey, go us :)<br>
+    There is a lot wrong, like losing sort orders on selecting different time ranges<br>
+    The tabs around by map being missing, and the hero drops downs also being gone.<br>
+    But that is because this is running the simplifilied query system, which we are optimizing<br>
+    Once that is completed, I'll merge back in everything else.<br>
+    <br>
+    Thanks to the Winkyface council, and the overwatch chill discord, and the now defunct overwatch datascience server.<br>
+    Big thanks to the overwatch forums, since hey, without you it wouldn't have happened.
+    <br>
+    <br>
+    HUGE thanks to DataVentures in Stats New Zealand. Wouldn't have happened without your support.
   </Column>
 </Row>
